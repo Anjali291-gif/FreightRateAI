@@ -2,9 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
     "backend": {
-      "root": ".",
+      "root": "backend",
       "framework": "fastapi",
-      "entrypoint": "api/index.py"
+      "entrypoint": "main:app"
     },
     "frontend": {
       "root": "frontend",
