@@ -4,7 +4,7 @@ import { useApp } from '../../context/AppContext';
 
 export default function Toast() {
   const { toast } = useApp();
-  if (!toast) return null;
+  if (!toast || typeof toast === 'function' || !toast.message) return null;
 
   const iconByType = {
     success: <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />,

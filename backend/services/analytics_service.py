@@ -10,12 +10,32 @@ from typing import Any, Dict, List, Optional
 import pandas as pd
 
 
+
 class AnalyticsService:
     def __init__(self):
-        self.base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-        self.raw_csv_path = os.path.join(self.base_dir, "data", "raw", "freight_dataset.csv")
-        self.summary_json_path = os.path.join(self.base_dir, "data", "processed", "dataset_summary.json")
-        self.metadata_json_path = os.path.join(self.base_dir, "data", "processed", "model_metadata.json")
+        # Candidate base directories: local dev (repo root) and Vercel (/var/task)
+        _file_dir = os.path.dirname(os.path.abspath(__file__))
+        candidates = [
+            os.path.abspath(os.path.join(_file_dir, "..", "..")),  # ../.. from backend/services/
+            os.getcwd(),
+            os.path.abspath(os.path.join(os.getcwd(), "..")),
+            "/var/task",
+            os.environ.get("PROJECT_ROOT", ""),
+        ]
+
+        def _resolve(*parts: str) -> str:
+            for base in candidates:
+                if not base:
+                    continue
+                p = os.path.normpath(os.path.join(base, *parts))
+                if os.path.exists(p):
+                    return p
+            # fallback to first candidate
+            return os.path.normpath(os.path.join(candidates[0], *parts))
+
+        self.raw_csv_path    = _resolve("data", "raw", "freight_dataset.csv")
+        self.summary_json_path   = _resolve("data", "processed", "dataset_summary.json")
+        self.metadata_json_path  = _resolve("data", "processed", "model_metadata.json")
         self._cached_df = None
 
     def _get_df(self) -> pd.DataFrame:
@@ -24,6 +44,7 @@ class AnalyticsService:
                 raise FileNotFoundError(f"Raw dataset file missing: {self.raw_csv_path}")
             self._cached_df = pd.read_csv(self.raw_csv_path)
         return self._cached_df
+
 
     def get_summary(self) -> Dict[str, Any]:
         """Returns consolidated dataset and model evaluation metrics."""

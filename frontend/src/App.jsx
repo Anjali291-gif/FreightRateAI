@@ -10,6 +10,7 @@ import MarketInsightsView from './components/views/MarketInsightsView';
 import ReportsView from './components/views/ReportsView';
 import VesselModal from './components/common/VesselModal';
 import Toast from './components/common/Toast';
+import ToastStack from './components/common/ToastStack';
 
 function MainLayout() {
   const { page, activeTab } = useApp();
@@ -55,6 +56,7 @@ function MainLayout() {
       {/* Overlays & Modals */}
       <VesselModal />
       <Toast />
+      <ToastStack />
     </div>
   );
 }

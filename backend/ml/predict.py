@@ -16,12 +16,30 @@ class FreightPredictor:
     """Wrapper class managing the loaded model, metadata, and feature transformations."""
 
     def __init__(self, model_path: str = None, metadata_path: str = None):
-        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-        self.models_dir = os.path.join(base_dir, "models", "saved_models")
-        self.processed_dir = os.path.join(base_dir, "data", "processed")
+        # Candidate base directories supporting both local development and Vercel serverless functions
+        candidates = [
+            os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")),
+            os.getcwd(),
+            os.path.abspath(os.path.join(os.getcwd(), "..")),
+            "/var/task",
+        ]
 
-        self.model_path = model_path or os.path.join(self.models_dir, "best_model.joblib")
-        self.metadata_path = metadata_path or os.path.join(self.processed_dir, "model_metadata.json")
+        def resolve_file(rel_options: List[str]) -> str:
+            for base in candidates:
+                for rel in rel_options:
+                    p = os.path.normpath(os.path.join(base, rel))
+                    if os.path.exists(p):
+                        return p
+            return os.path.normpath(os.path.join(candidates[0], rel_options[0]))
+
+        self.model_path = model_path or resolve_file([
+            os.path.join("models", "saved_models", "best_model.joblib"),
+            os.path.join("models", "saved_models", "gradient_boosting_regressor.joblib"),
+            os.path.join("models", "saved_models", "linear_regression.joblib"),
+        ])
+        self.metadata_path = metadata_path or resolve_file([
+            os.path.join("data", "processed", "model_metadata.json"),
+        ])
 
         self._load_artifacts()
 

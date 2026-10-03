@@ -1,41 +1,11 @@
-import urllib.request, json
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'backend'))
+os.chdir(os.path.dirname(__file__))
 
-def test(url, method='GET', data=None):
-    req = urllib.request.Request(url, method=method)
-    if data:
-        req.add_header('Content-Type', 'application/json')
-        body = json.dumps(data).encode('utf-8')
-    else:
-        body = None
-    try:
-        with urllib.request.urlopen(req, data=body) as res:
-            return res.status, json.loads(res.read().decode())
-    except urllib.error.HTTPError as e:
-        return e.code, json.loads(e.read().decode())
+from fastapi.testclient import TestClient
+from main import app
 
-print('--- HEALTH ---')
-s, d = test('http://localhost:8000/api/health')
-print('Status:', s, d)
-
-print('\n--- SUMMARY ---')
-s, d = test('http://localhost:8000/api/summary')
-print('Status:', s, 'Model:', d.get('selected_ml_model'), 'R2:', d.get('r2_score'))
-
-print('\n--- HISTORICAL ---')
-s, d = test('http://localhost:8000/api/historical?limit=5')
-print('Status:', s, 'Type:', type(d).__name__, 'Count:', len(d) if isinstance(d, list) else len(d.get('records', [])))
-if isinstance(d, list) and len(d) > 0:
-    print('Sample record keys:', list(d[0].keys()))
-
-print('\n--- VESSELS ---')
-s, d = test('http://localhost:8000/api/vessels')
-print('Status:', s, 'Type:', type(d).__name__, 'Count:', len(d.get('vessels', [])) if isinstance(d, dict) else len(d))
-
-print('\n--- DEMAND ---')
-s, d = test('http://localhost:8000/api/demand')
-print('Status:', s, 'Type:', type(d).__name__, 'Count:', len(d.get('trend', [])) if isinstance(d, dict) else len(d))
-
-print('\n--- FORECAST ---')
+client = TestClient(app)
 payload = {
     'date': '2026-10-03',
     'vessel_type': 'Capesize',
@@ -49,14 +19,41 @@ payload = {
     'weather_condition': 'Calm',
     'port_congestion': 2.0
 }
-s, d = test('http://localhost:8000/api/forecast', 'POST', payload)
-print('Status:', s, 'Forecast:', d)
 
-print('\n--- CHARTERING DECISION ---')
-s, d = test('http://localhost:8000/api/chartering-decision', 'POST', payload)
-print('Status:', s, 'Decision:', d)
+tests = [
+    ('GET  /api/health',              lambda: client.get('/api/health')),
+    ('GET  /api/summary',             lambda: client.get('/api/summary')),
+    ('GET  /api/historical?limit=3',  lambda: client.get('/api/historical?limit=3')),
+    ('GET  /api/vessels',             lambda: client.get('/api/vessels')),
+    ('GET  /api/demand',              lambda: client.get('/api/demand')),
+    ('POST /api/forecast',            lambda: client.post('/api/forecast', json=payload)),
+    ('POST /api/chartering-decision', lambda: client.post('/api/chartering-decision', json=payload)),
+    ('POST /api/forecast (invalid)',  lambda: client.post('/api/forecast', json={'bad': 'data'})),
+]
 
-print('\n--- INVALID FORECAST ---')
-bad_payload = {'date': 'invalid', 'vessel_type': 'Capesize'}
-s, d = test('http://localhost:8000/api/forecast', 'POST', bad_payload)
-print('Status:', s, 'Validation Error Response:', 'detail' in d)
+print('=' * 60)
+print('FreightAI Endpoint Tests (post Vercel changes)')
+print('=' * 60)
+all_pass = True
+for name, fn in tests:
+    try:
+        r = fn()
+        expected_fail = 'invalid' in name
+        ok = (r.status_code == 422) if expected_fail else (r.status_code == 200)
+        status = 'PASS' if ok else 'FAIL'
+        if not ok:
+            all_pass = False
+        print('  [' + status + '] ' + name + ' -> HTTP ' + str(r.status_code))
+        if name == 'POST /api/forecast':
+            d = r.json()
+            print('         rate=' + str(d['predicted_freight_rate']) + '  model=' + str(d['model']))
+        if name == 'POST /api/chartering-decision':
+            d = r.json()
+            print('         rec=' + str(d['recommendation']))
+    except Exception as e:
+        print('  [ERROR] ' + name + ' -> ' + str(e))
+        all_pass = False
+
+print('=' * 60)
+print('OVERALL: ' + ('ALL PASS' if all_pass else 'SOME FAILURES'))
+print('=' * 60)

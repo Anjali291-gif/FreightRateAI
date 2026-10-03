@@ -13,7 +13,7 @@ export default function Header() {
     sidebarOpen, setSidebarOpen,
     backendOnline, backendChecking, backendError, checkConnection,
     theme, toggleTheme,
-    isListening, toggleVoiceCommands,
+    isListening, toggleVoiceCommands, voiceStatus,
     notifOpen, setNotifOpen,
   } = useApp();
 
@@ -46,6 +46,26 @@ export default function Header() {
       </div>
 
       <div className="ml-auto flex items-center gap-2">
+        {/* Voice Command Live Status Pill */}
+        {voiceStatus && (
+          <div
+            className={`hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all max-w-[240px] truncate border shadow-xs ${
+              isListening
+                ? 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800'
+                : voiceStatus.toLowerCase().includes('not recognized')
+                ? 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800'
+                : 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800'
+            }`}
+          >
+            <span
+              className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                isListening ? 'bg-rose-500 animate-ping' : 'bg-emerald-500'
+              }`}
+            />
+            <span className="truncate">{voiceStatus}</span>
+          </div>
+        )}
+
         {/* Voice Command Button */}
         <button
           onClick={toggleVoiceCommands}

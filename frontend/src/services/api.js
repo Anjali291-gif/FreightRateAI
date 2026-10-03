@@ -13,7 +13,11 @@ import {
   MOCK_ACTIVITY,
 } from '../data/mockData';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+// In development: Vite proxies /api → http://127.0.0.1:8000 (see vite.config.js)
+// In production (Vercel): /api resolves to the same-domain serverless function
+// Override with VITE_API_URL env var when backend is on a separate domain
+const BASE_URL = import.meta.env.VITE_API_URL || '/api';
+
 let liveBackendEnabled = true;
 
 /**
@@ -57,7 +61,7 @@ async function request(path, options = {}) {
   } catch (err) {
     clearTimeout(timeoutId);
     if (err.name === 'AbortError') {
-      throw new Error('Backend request timed out. Please ensure FastAPI is running on http://localhost:8000.');
+      throw new Error('Backend request timed out. Please ensure the API server is reachable.');
     }
     throw err;
   }
