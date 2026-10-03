@@ -5,15 +5,14 @@
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "dist",
+        "buildCommand": "npm run build",
+        "zeroConfig": true
       }
     },
     {
       "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "200mb"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
@@ -28,14 +27,6 @@
     {
       "src": "/redoc",
       "dest": "/api/index.py"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|svg|png|ico|woff|woff2|ttf|map))",
-      "dest": "/$1"
     },
     {
       "src": "/(.*)",
