@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <rect width="200" height="100" fill="#0f172a"/>
+  <rect x="0" y="72" width="200" height="28" fill="#0c1a2e"/>
+  <path d="M0 75 Q40 71 80 75 Q120 79 160 75 Q180 77 200 75" stroke="#164e63" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <!-- Suezmax hull - slightly smaller than VLCC -->
+  <path d="M8 72 L16 57 L188 57 L194 72 Z" fill="#164e63"/>
+  <path d="M8 72 L20 67 L182 67 L194 72 Z" fill="#0e7490" opacity="0.5"/>
+  <rect x="16" y="53" width="172" height="4" fill="#0e7490" rx="1"/>
+  <!-- Pipeline -->
+  <line x1="24" y1="55" x2="152" y2="55" stroke="#22d3ee" stroke-width="1.5" opacity="0.7"/>
+  <!-- Midship manifold -->
+  <rect x="82" y="45" width="22" height="8" fill="#0e7490" rx="1" stroke="#22d3ee" stroke-width="0.8"/>
+  <!-- Tank tops -->
+  <rect x="24" y="47" width="20" height="6" fill="#164e63" rx="1" stroke="#22d3ee" stroke-width="0.6"/>
+  <rect x="48" y="47" width="20" height="6" fill="#164e63" rx="1" stroke="#22d3ee" stroke-width="0.6"/>
+  <rect x="72" y="47" width="8" height="6" fill="#164e63" rx="1" stroke="#22d3ee" stroke-width="0.6"/>
+  <rect x="108" y="47" width="16" height="6" fill="#164e63" rx="1" stroke="#22d3ee" stroke-width="0.6"/>
+  <rect x="128" y="47" width="18" height="6" fill="#164e63" rx="1" stroke="#22d3ee" stroke-width="0.6"/>
+  <!-- Superstructure -->
+  <rect x="155" y="37" width="28" height="20" fill="#0e7490" rx="2"/>
+  <rect x="157" y="39" width="10" height="6" fill="#67e8f9" rx="1" opacity="0.7"/>
+  <rect x="170" y="39" width="10" height="6" fill="#67e8f9" rx="1" opacity="0.7"/>
+  <rect x="166" y="28" width="8" height="9" fill="#164e63" rx="1"/>
+  <line x1="18" y1="28" x2="18" y2="53" stroke="#67e8f9" stroke-width="1"/>
+  <line x1="12" y1="36" x2="24" y2="36" stroke="#67e8f9" stroke-width="1"/>
+  <text x="10" y="90" font-family="monospace" font-size="7" fill="#22d3ee" font-weight="bold">SUEZMAX · 160k MT</text>
+</svg>

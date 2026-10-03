@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <rect width="200" height="100" fill="#0f172a"/>
+  <rect x="0" y="72" width="200" height="28" fill="#0c1a2e"/>
+  <path d="M0 75 Q50 71 100 75 Q150 79 200 75" stroke="#0c4a6e" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <!-- LNG Carrier hull -->
+  <path d="M8 72 L16 57 L188 57 L194 72 Z" fill="#0c4a6e"/>
+  <path d="M8 72 L20 67 L182 67 L194 72 Z" fill="#0369a1" opacity="0.5"/>
+  <rect x="16" y="53" width="172" height="4" fill="#0284c7" rx="1"/>
+  <!-- DISTINCTIVE: Moss-type spherical LNG tanks (4 large spheres above deck) -->
+  <!-- Tank 1 -->
+  <circle cx="48" cy="42" r="15" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="1.5"/>
+  <circle cx="48" cy="42" r="11" fill="#075985" opacity="0.8"/>
+  <circle cx="44" cy="38" r="3" fill="#bae6fd" opacity="0.4"/>
+  <!-- Tank 2 -->
+  <circle cx="90" cy="42" r="15" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="1.5"/>
+  <circle cx="90" cy="42" r="11" fill="#075985" opacity="0.8"/>
+  <circle cx="86" cy="38" r="3" fill="#bae6fd" opacity="0.4"/>
+  <!-- Tank 3 -->
+  <circle cx="132" cy="42" r="15" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="1.5"/>
+  <circle cx="132" cy="42" r="11" fill="#075985" opacity="0.8"/>
+  <circle cx="128" cy="38" r="3" fill="#bae6fd" opacity="0.4"/>
+  <!-- Tank skirts to deck -->
+  <rect x="40" y="53" width="16" height="4" fill="#0c4a6e"/>
+  <rect x="82" y="53" width="16" height="4" fill="#0c4a6e"/>
+  <rect x="124" y="53" width="16" height="4" fill="#0c4a6e"/>
+  <!-- Aft superstructure -->
+  <rect x="156" y="36" width="30" height="21" fill="#0369a1" rx="2"/>
+  <rect x="158" y="38" width="11" height="6" fill="#7dd3fc" rx="1" opacity="0.8"/>
+  <rect x="172" y="38" width="10" height="6" fill="#7dd3fc" rx="1" opacity="0.8"/>
+  <rect x="168" y="27" width="8" height="9" fill="#0c4a6e" rx="1"/>
+  <!-- Bow mast -->
+  <line x1="18" y1="30" x2="18" y2="53" stroke="#7dd3fc" stroke-width="1"/>
+  <text x="10" y="92" font-family="monospace" font-size="7" fill="#38bdf8" font-weight="bold">LNG CARRIER · 80k MT</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <rect width="200" height="100" fill="#0f172a"/>
+  <rect x="0" y="72" width="200" height="28" fill="#0c1a2e"/>
+  <path d="M0 75 Q50 71 100 75 Q150 79 200 75" stroke="#92400e" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <!-- Panamax hull (similar width constraint as Capesize but distinct) -->
+  <path d="M12 72 L20 58 L180 58 L188 72 Z" fill="#78350f"/>
+  <path d="M12 72 L24 67 L176 67 L188 72 Z" fill="#92400e" opacity="0.6"/>
+  <rect x="20" y="54" width="160" height="4" fill="#b45309" rx="1"/>
+  <!-- 6 cargo hatches -->
+  <rect x="24" y="39" width="16" height="15" fill="#78350f" rx="2" stroke="#f59e0b" stroke-width="0.8"/>
+  <rect x="44" y="39" width="16" height="15" fill="#78350f" rx="2" stroke="#f59e0b" stroke-width="0.8"/>
+  <rect x="64" y="39" width="16" height="15" fill="#78350f" rx="2" stroke="#f59e0b" stroke-width="0.8"/>
+  <rect x="84" y="39" width="16" height="15" fill="#78350f" rx="2" stroke="#f59e0b" stroke-width="0.8"/>
+  <rect x="104" y="39" width="16" height="15" fill="#78350f" rx="2" stroke="#f59e0b" stroke-width="0.8"/>
+  <rect x="124" y="39" width="16" height="15" fill="#78350f" rx="2" stroke="#f59e0b" stroke-width="0.8"/>
+  <!-- Superstructure (forward bridge - Panamax style) -->
+  <rect x="148" y="35" width="28" height="23" fill="#92400e" rx="2"/>
+  <rect x="150" y="37" width="10" height="6" fill="#fcd34d" rx="1" opacity="0.8"/>
+  <rect x="163" y="37" width="10" height="6" fill="#fcd34d" rx="1" opacity="0.8"/>
+  <rect x="160" y="26" width="8" height="9" fill="#78350f" rx="1"/>
+  <!-- Bow mast -->
+  <line x1="22" y1="30" x2="22" y2="54" stroke="#fcd34d" stroke-width="1"/>
+  <line x1="16" y1="38" x2="28" y2="38" stroke="#fcd34d" stroke-width="1"/>
+  <text x="12" y="90" font-family="monospace" font-size="7" fill="#f59e0b" font-weight="bold">PANAMAX · 75k MT</text>
+</svg>

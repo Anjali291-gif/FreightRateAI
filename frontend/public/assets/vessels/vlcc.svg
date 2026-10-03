@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <rect width="200" height="100" fill="#0f172a"/>
+  <!-- Water -->
+  <rect x="0" y="72" width="200" height="28" fill="#0c1a2e"/>
+  <path d="M0 75 Q30 71 60 75 Q90 79 120 75 Q150 71 180 75 Q190 77 200 75" stroke="#1e3a5f" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <!-- Very long tanker hull -->
+  <path d="M5 72 L12 56 L192 56 L196 72 Z" fill="#7f1d1d"/>
+  <path d="M5 72 L18 67 L185 67 L196 72 Z" fill="#991b1b" opacity="0.6"/>
+  <!-- Deck -->
+  <rect x="12" y="52" width="180" height="4" fill="#b91c1c" rx="1"/>
+  <!-- Pipeline running fore-aft -->
+  <line x1="20" y1="54" x2="155" y2="54" stroke="#ef4444" stroke-width="1.5" opacity="0.8"/>
+  <!-- Manifold / pump house (midship) -->
+  <rect x="85" y="44" width="20" height="8" fill="#b91c1c" rx="1" stroke="#ef4444" stroke-width="0.8"/>
+  <rect x="89" y="41" width="4" height="3" fill="#dc2626"/>
+  <rect x="97" y="41" width="4" height="3" fill="#dc2626"/>
+  <!-- Tank segments (visible tops) -->
+  <rect x="22" y="46" width="18" height="6" fill="#7f1d1d" rx="1" stroke="#ef4444" stroke-width="0.6"/>
+  <rect x="44" y="46" width="18" height="6" fill="#7f1d1d" rx="1" stroke="#ef4444" stroke-width="0.6"/>
+  <rect x="66" y="46" width="16" height="6" fill="#7f1d1d" rx="1" stroke="#ef4444" stroke-width="0.6"/>
+  <rect x="111" y="46" width="16" height="6" fill="#7f1d1d" rx="1" stroke="#ef4444" stroke-width="0.6"/>
+  <rect x="131" y="46" width="18" height="6" fill="#7f1d1d" rx="1" stroke="#ef4444" stroke-width="0.6"/>
+  <!-- Aft superstructure -->
+  <rect x="158" y="36" width="28" height="20" fill="#991b1b" rx="2"/>
+  <rect x="160" y="38" width="10" height="6" fill="#fca5a5" rx="1" opacity="0.7"/>
+  <rect x="172" y="38" width="10" height="6" fill="#fca5a5" rx="1" opacity="0.7"/>
+  <!-- Funnel -->
+  <rect x="170" y="28" width="8" height="8" fill="#7f1d1d" rx="1"/>
+  <rect x="171" y="24" width="6" height="4" fill="#6b21a8" rx="1"/>
+  <!-- Mast -->
+  <line x1="20" y1="26" x2="20" y2="52" stroke="#fca5a5" stroke-width="1"/>
+  <line x1="14" y1="34" x2="26" y2="34" stroke="#fca5a5" stroke-width="1"/>
+  <!-- Label -->
+  <text x="10" y="90" font-family="monospace" font-size="7" fill="#f87171" font-weight="bold">VLCC · 300k MT</text>
+</svg>

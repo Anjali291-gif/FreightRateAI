@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <rect width="200" height="100" fill="#0f172a"/>
+  <rect x="0" y="72" width="200" height="28" fill="#0c1a2e"/>
+  <path d="M0 75 Q50 71 100 75 Q150 79 200 75" stroke="#1e293b" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <!-- Generic vessel hull -->
+  <path d="M15 72 L22 58 L178 58 L185 72 Z" fill="#1e293b"/>
+  <path d="M15 72 L25 67 L175 67 L185 72 Z" fill="#334155" opacity="0.6"/>
+  <rect x="22" y="54" width="156" height="4" fill="#475569" rx="1"/>
+  <!-- Generic deck structure -->
+  <rect x="30" y="40" width="25" height="14" fill="#1e293b" rx="2" stroke="#475569" stroke-width="0.8"/>
+  <rect x="60" y="40" width="25" height="14" fill="#1e293b" rx="2" stroke="#475569" stroke-width="0.8"/>
+  <rect x="90" y="40" width="25" height="14" fill="#1e293b" rx="2" stroke="#475569" stroke-width="0.8"/>
+  <rect x="120" y="40" width="25" height="14" fill="#1e293b" rx="2" stroke="#475569" stroke-width="0.8"/>
+  <!-- Superstructure -->
+  <rect x="148" y="36" width="28" height="22" fill="#334155" rx="2"/>
+  <rect x="150" y="38" width="10" height="6" fill="#94a3b8" rx="1" opacity="0.7"/>
+  <rect x="163" y="38" width="10" height="6" fill="#94a3b8" rx="1" opacity="0.7"/>
+  <rect x="160" y="27" width="8" height="9" fill="#1e293b" rx="1"/>
+  <line x1="24" y1="30" x2="24" y2="54" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="18" y1="38" x2="30" y2="38" stroke="#94a3b8" stroke-width="1"/>
+  <!-- Ship icon indicator -->
+  <text x="38" y="88" font-family="monospace" font-size="7" fill="#64748b" font-weight="bold">MARITIME VESSEL</text>
+</svg>

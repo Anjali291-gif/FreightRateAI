@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <rect width="200" height="100" fill="#0f172a"/>
+  <rect x="0" y="72" width="200" height="28" fill="#0c1a2e"/>
+  <path d="M0 75 Q50 71 100 75 Q150 79 200 75" stroke="#1e1b4b" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <!-- Container ship hull - large, square -->
+  <path d="M8 72 L14 57 L190 57 L196 72 Z" fill="#1e1b4b"/>
+  <path d="M8 72 L18 67 L184 67 L196 72 Z" fill="#312e81" opacity="0.5"/>
+  <rect x="14" y="53" width="176" height="4" fill="#4338ca" rx="1"/>
+  <!-- DISTINCTIVE: Stacked containers - 3 rows of varied colors -->
+  <!-- Row 3 (top) -->
+  <rect x="18" y="32" width="14" height="8" fill="#dc2626" rx="1"/>
+  <rect x="35" y="32" width="14" height="8" fill="#16a34a" rx="1"/>
+  <rect x="52" y="32" width="14" height="8" fill="#1d4ed8" rx="1"/>
+  <rect x="69" y="32" width="14" height="8" fill="#b45309" rx="1"/>
+  <rect x="86" y="32" width="14" height="8" fill="#7c3aed" rx="1"/>
+  <rect x="103" y="32" width="14" height="8" fill="#0e7490" rx="1"/>
+  <rect x="120" y="32" width="14" height="8" fill="#dc2626" rx="1"/>
+  <!-- Row 2 (middle) -->
+  <rect x="18" y="41" width="14" height="8" fill="#1d4ed8" rx="1"/>
+  <rect x="35" y="41" width="14" height="8" fill="#b45309" rx="1"/>
+  <rect x="52" y="41" width="14" height="8" fill="#16a34a" rx="1"/>
+  <rect x="69" y="41" width="14" height="8" fill="#7c3aed" rx="1"/>
+  <rect x="86" y="41" width="14" height="8" fill="#dc2626" rx="1"/>
+  <rect x="103" y="41" width="14" height="8" fill="#1d4ed8" rx="1"/>
+  <rect x="120" y="41" width="14" height="8" fill="#16a34a" rx="1"/>
+  <!-- Row 1 (bottom) -->
+  <rect x="18" y="50" width="14" height="4" fill="#0e7490" rx="1"/>
+  <rect x="35" y="50" width="14" height="4" fill="#dc2626" rx="1"/>
+  <rect x="52" y="50" width="14" height="4" fill="#b45309" rx="1"/>
+  <rect x="69" y="50" width="14" height="4" fill="#16a34a" rx="1"/>
+  <rect x="86" y="50" width="14" height="4" fill="#1d4ed8" rx="1"/>
+  <rect x="103" y="50" width="14" height="4" fill="#dc2626" rx="1"/>
+  <rect x="120" y="50" width="14" height="4" fill="#7c3aed" rx="1"/>
+  <!-- Container grid lines -->
+  <line x1="18" y1="41" x2="134" y2="41" stroke="#0f172a" stroke-width="0.5" opacity="0.6"/>
+  <line x1="18" y1="50" x2="134" y2="50" stroke="#0f172a" stroke-width="0.5" opacity="0.6"/>
+  <!-- Aft superstructure (bridge on a container ship is aft) -->
+  <rect x="148" y="33" width="32" height="24" fill="#312e81" rx="2"/>
+  <rect x="150" y="35" width="12" height="7" fill="#818cf8" rx="1" opacity="0.8"/>
+  <rect x="165" y="35" width="12" height="7" fill="#818cf8" rx="1" opacity="0.8"/>
+  <rect x="162" y="24" width="9" height="9" fill="#1e1b4b" rx="1"/>
+  <!-- Bow crane/mast -->
+  <line x1="16" y1="26" x2="16" y2="53" stroke="#818cf8" stroke-width="1"/>
+  <line x1="10" y1="34" x2="22" y2="34" stroke="#818cf8" stroke-width="1"/>
+  <text x="8" y="91" font-family="monospace" font-size="6" fill="#818cf8" font-weight="bold">CONTAINER POST-PANAMAX</text>
+</svg>

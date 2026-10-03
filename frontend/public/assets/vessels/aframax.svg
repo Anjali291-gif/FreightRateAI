@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <rect width="200" height="100" fill="#0f172a"/>
+  <rect x="0" y="72" width="200" height="28" fill="#0c1a2e"/>
+  <path d="M0 75 Q50 71 100 75 Q150 79 200 75" stroke="#4c1d95" stroke-width="1.5" fill="none" opacity="0.7"/>
+  <!-- Aframax hull - medium tanker -->
+  <path d="M12 72 L20 58 L182 58 L190 72 Z" fill="#4c1d95"/>
+  <path d="M12 72 L24 67 L178 67 L190 72 Z" fill="#6d28d9" opacity="0.5"/>
+  <rect x="20" y="54" width="162" height="4" fill="#7c3aed" rx="1"/>
+  <!-- Pipeline -->
+  <line x1="28" y1="56" x2="145" y2="56" stroke="#a78bfa" stroke-width="1.5" opacity="0.8"/>
+  <!-- Midship pump -->
+  <rect x="80" y="46" width="20" height="8" fill="#6d28d9" rx="1" stroke="#a78bfa" stroke-width="0.8"/>
+  <!-- Tank tops (fewer than VLCC) -->
+  <rect x="28" y="47" width="20" height="7" fill="#4c1d95" rx="1" stroke="#a78bfa" stroke-width="0.6"/>
+  <rect x="52" y="47" width="20" height="7" fill="#4c1d95" rx="1" stroke="#a78bfa" stroke-width="0.6"/>
+  <rect x="104" y="47" width="20" height="7" fill="#4c1d95" rx="1" stroke="#a78bfa" stroke-width="0.6"/>
+  <rect x="128" y="47" width="14" height="7" fill="#4c1d95" rx="1" stroke="#a78bfa" stroke-width="0.6"/>
+  <!-- Superstructure -->
+  <rect x="150" y="38" width="28" height="20" fill="#6d28d9" rx="2"/>
+  <rect x="153" y="40" width="9" height="5" fill="#c4b5fd" rx="1" opacity="0.8"/>
+  <rect x="165" y="40" width="9" height="5" fill="#c4b5fd" rx="1" opacity="0.8"/>
+  <rect x="162" y="29" width="7" height="9" fill="#4c1d95" rx="1"/>
+  <!-- Bow mast -->
+  <line x1="22" y1="30" x2="22" y2="54" stroke="#c4b5fd" stroke-width="1"/>
+  <line x1="16" y1="38" x2="28" y2="38" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="12" y="90" font-family="monospace" font-size="7" fill="#a78bfa" font-weight="bold">AFRAMAX · 110k MT</text>
+</svg>

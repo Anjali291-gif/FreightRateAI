@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <rect width="200" height="100" fill="#0f172a"/>
+  <!-- Water -->
+  <rect x="0" y="72" width="200" height="28" fill="#0c2340" rx="0"/>
+  <path d="M0 74 Q25 70 50 74 Q75 78 100 74 Q125 70 150 74 Q175 78 200 74" stroke="#1e40af" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <!-- Hull -->
+  <path d="M10 72 L15 58 L185 58 L190 72 Z" fill="#1e3a5f"/>
+  <path d="M10 72 L20 68 L180 68 L190 72 Z" fill="#2563eb" opacity="0.4"/>
+  <!-- Deck -->
+  <rect x="15" y="54" width="170" height="4" fill="#1d4ed8" rx="1"/>
+  <!-- Cargo hatches - large bulk carrier has wide hatches -->
+  <rect x="25" y="38" width="22" height="16" fill="#1e40af" rx="2" stroke="#3b82f6" stroke-width="0.8"/>
+  <rect x="52" y="38" width="22" height="16" fill="#1e40af" rx="2" stroke="#3b82f6" stroke-width="0.8"/>
+  <rect x="79" y="38" width="22" height="16" fill="#1e40af" rx="2" stroke="#3b82f6" stroke-width="0.8"/>
+  <rect x="106" y="38" width="22" height="16" fill="#1e40af" rx="2" stroke="#3b82f6" stroke-width="0.8"/>
+  <rect x="133" y="38" width="22" height="16" fill="#1e40af" rx="2" stroke="#3b82f6" stroke-width="0.8"/>
+  <!-- Hatch cross lines -->
+  <line x1="36" y1="38" x2="36" y2="54" stroke="#3b82f6" stroke-width="0.5" opacity="0.6"/>
+  <line x1="63" y1="38" x2="63" y2="54" stroke="#3b82f6" stroke-width="0.5" opacity="0.6"/>
+  <!-- Superstructure / Bridge -->
+  <rect x="155" y="30" width="24" height="24" fill="#1e40af" rx="2"/>
+  <rect x="157" y="32" width="9" height="6" fill="#60a5fa" rx="1" opacity="0.8"/>
+  <rect x="168" y="32" width="9" height="6" fill="#60a5fa" rx="1" opacity="0.8"/>
+  <!-- Mast -->
+  <line x1="168" y1="20" x2="168" y2="30" stroke="#93c5fd" stroke-width="1.5"/>
+  <line x1="162" y1="24" x2="174" y2="24" stroke="#93c5fd" stroke-width="1"/>
+  <!-- Label -->
+  <text x="18" y="90" font-family="monospace" font-size="7" fill="#60a5fa" font-weight="bold">CAPESIZE · 180k MT</text>
+</svg>
