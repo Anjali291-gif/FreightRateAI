@@ -1,0 +1,97 @@
+{
+  "dataset_name": "FreightAI Synthetic Maritime Freight Dataset",
+  "number_of_rows": 10000,
+  "number_of_columns": 12,
+  "columns": [
+    "date",
+    "vessel_type",
+    "vessel_size",
+    "origin",
+    "destination",
+    "commodity",
+    "distance_nm",
+    "fuel_price",
+    "cargo_demand",
+    "freight_rate",
+    "weather_condition",
+    "port_congestion"
+  ],
+  "missing_values": {
+    "date": 0,
+    "vessel_type": 0,
+    "vessel_size": 0,
+    "origin": 0,
+    "destination": 0,
+    "commodity": 0,
+    "distance_nm": 0,
+    "fuel_price": 0,
+    "cargo_demand": 0,
+    "freight_rate": 0,
+    "weather_condition": 0,
+    "port_congestion": 0
+  },
+  "total_missing_values": 0,
+  "average_freight_rate": 60.25,
+  "minimum_freight_rate": 10.2,
+  "maximum_freight_rate": 165.57,
+  "average_cargo_demand": 101.16,
+  "average_fuel_price": 655.65,
+  "correlation_between_numerical_variables": {
+    "vessel_size": {
+      "vessel_size": 1.0,
+      "distance_nm": -0.0886,
+      "fuel_price": -0.0077,
+      "cargo_demand": -0.009,
+      "freight_rate": -0.5307,
+      "port_congestion": 0.0174
+    },
+    "distance_nm": {
+      "vessel_size": -0.0886,
+      "distance_nm": 1.0,
+      "fuel_price": -0.0013,
+      "cargo_demand": 0.0055,
+      "freight_rate": 0.3509,
+      "port_congestion": 0.0293
+    },
+    "fuel_price": {
+      "vessel_size": -0.0077,
+      "distance_nm": -0.0013,
+      "fuel_price": 1.0,
+      "cargo_demand": -0.0295,
+      "freight_rate": 0.0639,
+      "port_congestion": -0.0055
+    },
+    "cargo_demand": {
+      "vessel_size": -0.009,
+      "distance_nm": 0.0055,
+      "fuel_price": -0.0295,
+      "cargo_demand": 1.0,
+      "freight_rate": 0.0911,
+      "port_congestion": 0.1058
+    },
+    "freight_rate": {
+      "vessel_size": -0.5307,
+      "distance_nm": 0.3509,
+      "fuel_price": 0.0639,
+      "cargo_demand": 0.0911,
+      "freight_rate": 1.0,
+      "port_congestion": 0.075
+    },
+    "port_congestion": {
+      "vessel_size": 0.0174,
+      "distance_nm": 0.0293,
+      "fuel_price": -0.0055,
+      "cargo_demand": 0.1058,
+      "freight_rate": 0.075,
+      "port_congestion": 1.0
+    }
+  },
+  "additional_statistics": {
+    "freight_rate_std": 31.74,
+    "distance_nm_mean": 6326.96,
+    "port_congestion_mean_days": 3.64,
+    "vessel_types_count": 9,
+    "commodities_count": 10,
+    "routes_count": 15
+  }
+}

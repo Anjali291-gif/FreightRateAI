@@ -1,0 +1,21 @@
+{
+  "models": {
+    "Linear Regression": {
+      "MAE": 2.7855,
+      "RMSE": 3.5466,
+      "R2": 0.988
+    },
+    "Random Forest Regressor": {
+      "MAE": 2.3767,
+      "RMSE": 3.0318,
+      "R2": 0.9912
+    },
+    "Gradient Boosting Regressor": {
+      "MAE": 2.0276,
+      "RMSE": 2.5457,
+      "R2": 0.9938
+    }
+  },
+  "selected_model": "Gradient Boosting Regressor",
+  "selection_criteria": "Highest R2 score and lowest RMSE on test set"
+}
